@@ -18,7 +18,7 @@
     <!-- begin header -->
 
     <div class="row">
-        <div class="col s12">
+        <div class="col s12 center-align">
             <h1>Music Box</h1>
         </div>
     </div>
@@ -27,9 +27,11 @@
 
 <section>
 
-    <!-- initial load: search for artist section -->
+    <!-- initial load: search for song section -->
 
+    <div id="init" class="init"> <!-- add hide class here -->
     <div class="row">
+
         <div class="col s12 valign-wrapper">
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor, dolorem rerum non quo praesentium nihil explicabo necessitatibus earum saepe a tempora nam commodi quas! Nesciunt alias porro enim minima quidem?</p>
         </div>
@@ -43,7 +45,7 @@
         </div>
         <div class="input-field col valign-wrapper">
             <button id="submit-btn" class="btn waves-effect waves-light" type="submit" name="action">
-                Submit
+                Search
             </button>
         </div>
         <div class="input-field col valign-wrapper">
@@ -51,11 +53,14 @@
                 Clear
             </button>
         </div>
+        </div>
     </div>
 
 </section>
 
 <main>
+
+    <!-- hidden until search -->
 
     <div class="row">
         <div id="search-results" class="search-results hide">
