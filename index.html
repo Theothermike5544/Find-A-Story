@@ -37,23 +37,50 @@
         </div>
     </div>
     <div class="row">
-        <div class="input-field col valign-wrapper offset-s2">
-            <p><i class="material-icons">search</i></p>
+        <div class="col s6 valign-wrapper">
+        
+    <!-- input 1: search for artist -->
+
+        <form>
+            <div class="input-field col s12">
+                <i class="material-icons prefix">search</i>
+                <input placeholder="Search for Artist" id="search-artist" type="text">
+            </div>
+            <div class="col valign-wrapper offset-s6">
+                <button id="submit-btn" class="btn waves-effect waves-light" type="submit" name="action">
+                    Search
+                </button>
+            </div>
+            <div class="col valign-wrapper">
+                <button id="clear-btn" class="btn waves-effect waves-light" type="submit" name="action">
+                    Clear
+                </button>
+            </div>
+        </form>
+
         </div>
-        <div class="input-field col s5">
-            <input placeholder="Search for Song Title" id="search-song" type="text" class="validate">
+        <div class="col s6 valign-wrapper">
+
+    <!-- input 2: search for song title -->
+
+        <form>
+            <div class="input-field col s12">
+                <i class="material-icons prefix">search</i>
+                <input placeholder="Search for Song Title" id="search-song" type="text">
+            </div>
+            <div class="col valign-wrapper offset-s6">
+                <button id="submit-btn" class="btn waves-effect waves-light" type="submit" name="action">
+                    Search
+                </button>
+            </div>
+            <div class="col valign-wrapper">
+                <button id="clear-btn" class="btn waves-effect waves-light" type="submit" name="action">
+                    Clear
+                </button>
+            </div>
+        </form>
         </div>
-        <div class="input-field col valign-wrapper">
-            <button id="submit-btn" class="btn waves-effect waves-light" type="submit" name="action">
-                Search
-            </button>
-        </div>
-        <div class="input-field col valign-wrapper">
-            <button id="clear-btn" class="btn waves-effect waves-light" type="submit" name="action">
-                Clear
-            </button>
-        </div>
-        </div>
+    </div>
     </div>
 
 </section>
