@@ -25,14 +25,14 @@
 
 </header>
 
+<div id="init" class="init"> <!-- add hide class here -->
+
 <section>
+    <div class="row"></div>
+    <div class="col s12 valign-wrapper">
 
     <!-- initial load: search for media section -->
 
-    <div id="init" class="init"> <!-- add hide class here -->
-    <div class="row">
-
-        <div class="col s12 valign-wrapper">
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor, dolorem rerum non quo praesentium nihil explicabo necessitatibus earum saepe a tempora nam commodi quas! Nesciunt alias porro enim minima quidem?</p>
         </div>
     </div>
@@ -48,6 +48,9 @@
                 <label>Enter Story Title</label>
             </div>
             <div class="input-field col s3">
+    
+    <!-- dropdown options to select media type -->
+
                 <select>
                     <option value="" disabled selected>Select Media</option>
                     <option value="1">Book</option>
@@ -56,6 +59,9 @@
                 </select>
                 <label>Media Type</label>
             </div>
+
+    <!-- submit & clear buttons -->
+
             <div class="input-field col">
                 <button id="submit-btn" class="btn waves-effect waves-light" type="submit" name="action">
                     Search
@@ -71,6 +77,22 @@
         </div>
     </div>
 
+</section>
+
+<section>
+    <div class="row">
+    <div class="col s12 valign-wrapper">
+
+    <!-- search history -->
+
+    <ul id="search-history" class="search-history">
+        <li><a href="">test</a></li>
+        <li><a href="">test</a></li>
+        <li><a href="">test</a></li>
+      </ul>
+
+    </div>
+    </div>
 </section>
 
 <main>
@@ -100,15 +122,11 @@
 </main>
 
 <footer>
+    <div class="container center-align">
 
-    <!-- begin footer -->
+        <p>Contributions by Clever Cats</p>
 
-    <div class="row">
-        <div class="col s12 center-align">
-            <p>Contributions by Clever Cats</p>
-        </div>
     </div>
-
 </footer>
 
 </div>
