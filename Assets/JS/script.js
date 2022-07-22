@@ -35,3 +35,8 @@ var displayLyrics = function(){
 //   }).catch(function (err) {
 //     console.log(err);
 //   })
+
+// set up dropdown function for search input
+$(document).ready(function(){
+    $('select').formSelect();
+  });

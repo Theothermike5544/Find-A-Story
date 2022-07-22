@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="./Assets/Css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" href="./Assets/Css/style.css" />
-    <title>Music Box</title>
+    <title>Find A Story</title>
 </head>
 <body>
 
@@ -19,7 +19,7 @@
 
     <div class="row">
         <div class="col s12 center-align">
-            <h1>Music Box</h1>
+            <h1>Find a Story</h1>
         </div>
     </div>
 
@@ -27,7 +27,7 @@
 
 <section>
 
-    <!-- initial load: search for song section -->
+    <!-- initial load: search for media section -->
 
     <div id="init" class="init"> <!-- add hide class here -->
     <div class="row">
@@ -37,21 +37,31 @@
         </div>
     </div>
     <div class="row">
-        <div class="col s6 valign-wrapper">
+        <div class="col s12 valign-wrapper">
         
-    <!-- input 1: search for artist -->
+    <!-- input: search for books/movies -->
 
-        <form>
-            <div class="input-field col s12">
+        <form class="input-field col s12">
+            <div class="input-field col s6">
                 <i class="material-icons prefix">search</i>
-                <input placeholder="Search for Artist" id="search-artist" type="text">
+                <input placeholder="Search for Books, Movies, TV Series" id="search-media" type="text">
+                <label>Enter Story Title</label>
             </div>
-            <div class="col valign-wrapper offset-s6">
+            <div class="input-field col s3">
+                <select>
+                    <option value="" disabled selected>Select Media</option>
+                    <option value="1">Book</option>
+                    <option value="2">Movie</option>
+                    <option value="3">TV Series</option>
+                </select>
+                <label>Media Type</label>
+            </div>
+            <div class="input-field col">
                 <button id="submit-btn" class="btn waves-effect waves-light" type="submit" name="action">
                     Search
                 </button>
             </div>
-            <div class="col valign-wrapper">
+            <div class="input-field col">
                 <button id="clear-btn" class="btn waves-effect waves-light" type="submit" name="action">
                     Clear
                 </button>
@@ -59,28 +69,6 @@
         </form>
 
         </div>
-        <div class="col s6 valign-wrapper">
-
-    <!-- input 2: search for song title -->
-
-        <form>
-            <div class="input-field col s12">
-                <i class="material-icons prefix">search</i>
-                <input placeholder="Search for Song Title" id="search-song" type="text">
-            </div>
-            <div class="col valign-wrapper offset-s6">
-                <button id="submit-btn" class="btn waves-effect waves-light" type="submit" name="action">
-                    Search
-                </button>
-            </div>
-            <div class="col valign-wrapper">
-                <button id="clear-btn" class="btn waves-effect waves-light" type="submit" name="action">
-                    Clear
-                </button>
-            </div>
-        </form>
-        </div>
-    </div>
     </div>
 
 </section>
@@ -92,20 +80,17 @@
     <div class="row">
         <div id="search-results" class="search-results hide">
 
-    <!-- container 1: song results & album art -->
+    <!-- container 1: display media art results -->
 
         <div class="col s6">
-        <div id="song-data" class="col s6 right-align">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla earum reprehenderit sint nisi. Laboriosam dolore provident, minus ut fugit facere magnam officia eum magni consequatur possimus quis, delectus ullam a!</p>
-        </div>
-        <div id="album-art" class="col s6 center-align">
+        <div id="media-art" class="col s6 center-align">
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla earum reprehenderit sint nisi. Laboriosam dolore provident, minus ut fugit facere magnam officia eum magni consequatur possimus quis, delectus ullam a!</p>
         </div>
         </div>
 
-    <!-- container 2: lyrics -->
+    <!-- container 2: display media data results -->
     
-        <div id="lyrics" class="col s6">
+        <div id="media-data" class="col s6">
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla earum reprehenderit sint nisi. Laboriosam dolore provident, minus ut fugit facere magnam officia eum magni consequatur possimus quis, delectus ullam a!</p>
         </div>
 
