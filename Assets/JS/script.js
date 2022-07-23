@@ -1,39 +1,39 @@
 const bookAPIKey = "AIzaSyAWyw1BzmR-6qJOC2A1-G0l_CqKVCN8N4s"
 const movieAPIKey = "ec8e125d"
 const mediaInputEl = document.getElementById('search-media');
+const dropDownEl = document.getElementById('media-selector');
 
 // set up dropdown function for search input
 $(document).ready(function(){
-    $('select').formSelect();
-  });
+  $('select').formSelect();
+});
 
 // disable the enter key from being utilized with the search function
 $(document).keypress(
-    function (event) {
-        if (event.which == '13') {
-            event.preventDefault();
-        }
-    });
+  function (event) {
+    if (event.which == '13') {
+      event.preventDefault();
+      }
+  });
 
 // Search Button functionality
 $('#submit-btn').on('click', function(event) {
-event.preventDefault();
-    let searchMedia = mediaInputEl.value.trim();
+  event.preventDefault();
+  let searchMedia = mediaInputEl.value.trim();
+  const optionEl = document.getElementById('media-selector');
 
-    // get result unless input left blank
-    if (searchMedia.value = "1") {
+    // get result based on media type, unless input left blank
+    if (optionEl.value === "1") {
       lookBookData(searchMedia);
       $('#search-media').val('');
-    } else if (searchMedia.value = "2"){
-        lookMovieData(searchMedia);
+    } else if (optionEl.value === "2"){
+      lookMovieData(searchMedia);
       $('#search-media').val('');
-    }
-    else if (searchMedia.value = "3"){
-        lookTVData(searchMedia);
+    } else if (optionEl.value === "3"){
+      lookTVData(searchMedia);
       $('#search-media').val('');
-    }
-    else {
-        alert('Please enter a valid title.');
+    } else {
+      alert('Please enter a valid title.');
     }
 });
 
@@ -51,26 +51,43 @@ var lookBookData = function(book) {
       });
     }
   })
-  
   .catch(function(error) {
     alert('Unable to connect to book api');
 });
 }
 
-
+// function to get movie data
 var lookMovieData = function(movie) {
-    var movieUrl = "https://www.omdbapi.com/?apikey=" + movieAPIKey + "&t=" + movie + "&r=json";
+  var movieApiUrl = "https://www.omdbapi.com/?apikey=" + movieAPIKey + "&t=" + movie + "&r=json";
 
-    fetch(movieUrl)
-    .then(function(response){
-        if (response.ok){
-            console.log(response)
-            response.json().then(function(title){
-            console.log(title.Response);
-        });
-    }
-    })
-    .catch(function(error){
-        alert('Unable to connect to book api')
+  fetch(movieApiUrl)
+  .then(function(response){
+    if (response.ok){
+      console.log(response)
+      response.json().then(function(title){
+      console.log(title);
     });
+  }
+  })
+  .catch(function(error){
+    alert('Unable to connect to book api')
+  });
 }
+
+// function to get tv data
+var lookTVData = function(tv) {
+  var tvApiUrl = "https://www.omdbapi.com/?apikey=" + movieAPIKey + "&t=" + tv + "&r=json";
+
+  fetch(tvApiUrl)
+  .then(function(response) {
+    if (response.ok) {
+      console.log(response)
+      response.json().then(function(data) {
+      console.log(data);
+      });
+    }
+  })
+  .catch(function(error) {
+    alert('Unable to connect to TV api');
+  })
+};
