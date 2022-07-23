@@ -15,15 +15,36 @@ $(document).keypress(
         }
     });
 
+// Search Button functionality
 $('#submit-btn').on('click', function(event) {
 event.preventDefault();
     let searchMedia = mediaInputEl.value.trim();
 
     // get result unless input left blank
     if (searchMedia) {
-      console.log('hello world!');
-      //$('#search-media').val('');
+      lookBookData(searchMedia);
+      $('#search-media').val('');
     } else {
       alert('Please enter a valid title.');
     }
 });
+
+// function to get book data
+var lookBookData = function(book) {
+  var bookApiUrl = "https://www.googleapis.com/books/v1/volumes" + "?q=" + book + "&api-key=" + bookAPIKey;
+
+  fetch(bookApiUrl)
+  .then(function(response) {
+    if (response.ok) {
+      console.log(response)
+      response.json().then(function(data) {
+      console.log(data.items[0].volumeInfo);
+      console.log(data.items[0].volumeInfo.title);
+      });
+    }
+  })
+  
+  .catch(function(error) {
+    alert('Unable to connect to book api');
+});
+}
