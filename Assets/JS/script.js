@@ -6,6 +6,11 @@ $(document).ready(function(){
     $('select').formSelect();
   });
 
+// set up dropdown function for search input
+$(document).ready(function(){
+    $('select').formSelect();
+  }); 
+
 // disable the enter key from being utilized with the search function
 $(document).keypress(
     function (event) {
