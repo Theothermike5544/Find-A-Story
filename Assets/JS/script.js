@@ -21,11 +21,19 @@ event.preventDefault();
     let searchMedia = mediaInputEl.value.trim();
 
     // get result unless input left blank
-    if (searchMedia) {
+    if (searchMedia.value = "1") {
       lookBookData(searchMedia);
       $('#search-media').val('');
-    } else {
-      alert('Please enter a valid title.');
+    } else if (searchMedia.value = "2"){
+        lookMovieData(searchMedia);
+      $('#search-media').val('');
+    }
+    else if (searchMedia.value = "3"){
+        lookTVData(searchMedia);
+      $('#search-media').val('');
+    }
+    else {
+        alert('Please enter a valid title.');
     }
 });
 
@@ -47,4 +55,22 @@ var lookBookData = function(book) {
   .catch(function(error) {
     alert('Unable to connect to book api');
 });
+}
+
+
+var lookMovieData = function(movie) {
+    var movieUrl = "https://www.omdbapi.com/?apikey=" + movieAPIKey + "&t=" + movie + "&r=json";
+
+    fetch(movieUrl)
+    .then(function(response){
+        if (response.ok){
+            console.log(response)
+            response.json().then(function(title){
+            console.log(title.Response);
+        });
+    }
+    })
+    .catch(function(error){
+        alert('Unable to connect to book api')
+    });
 }
