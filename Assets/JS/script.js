@@ -5,3 +5,12 @@ const movieAPIKey = "ec8e125d"
 $(document).ready(function(){
     $('select').formSelect();
   });
+
+// disable the enter key from being utilized with the search function
+$(document).keypress(
+    function (event) {
+        if (event.which == '13') {
+            event.preventDefault();
+        }
+    });
+
