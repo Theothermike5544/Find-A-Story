@@ -4,9 +4,134 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="./Assets/Css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="./Assets/Css/style.css" />
+    <title>Find A Story</title>
 </head>
 <body>
+
+<div class="container">
+
+<header>
+    <div class="row">
+        <div class="col s12 center-align">
+            <h1>Find a Story</h1>
+        </div>
+    </div>
+</header>
+
+<!-- initial load: search for media section -->
+
+<div id="init" class="init"> <!-- add hide class here -->
+
+<section>
+    <div class="row">
+    <div class="col s12 valign-wrapper">
+
+    <!-- introductory content -->
+
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor, dolorem rerum non quo praesentium nihil explicabo necessitatibus earum saepe a tempora nam commodi quas! Nesciunt alias porro enim minima quidem?</p>
     
+    </div>
+    </div>
+    <div class="row">
+        <div class="col s12 valign-wrapper">
+        
+    <!-- input: search for books/movies -->
+
+        <form class="input-field col s12">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">search</i>
+                <input placeholder="Search for Books, Movies, TV Series" id="search-media" type="text">
+                <label>Enter Story Title</label>
+            </div>
+            <div class="input-field col s3">
+    
+    <!-- dropdown options to select media type -->
+
+                <select>
+                    <option value="" disabled selected>Select Media</option>
+                    <option value="1">Book</option>
+                    <option value="2">Movie</option>
+                    <option value="3">TV Series</option>
+                </select>
+                <label>Media Type</label>
+            </div>
+
+    <!-- submit & clear buttons -->
+
+            <div class="input-field col">
+                <button id="submit-btn" class="btn waves-effect waves-light" type="submit" name="action">
+                    Search
+                </button>
+            </div>
+            <div class="input-field col">
+                <button id="clear-btn" class="btn waves-effect waves-light" type="submit" name="action">
+                    Clear
+                </button>
+            </div>
+        </form>
+
+        </div>
+    </div>
+
+</section>
+
+<section>
+    <div class="row">
+    <div class="col s12 valign-wrapper">
+
+    <!-- search history -->
+
+        <ul id="search-history" class="search-history">
+            <li><a href="">test</a></li>
+            <li><a href="">test</a></li>
+            <li><a href="">test</a></li>
+        </ul>
+
+    </div>
+    </div>
+</section>
+
+<main>
+
+    <!-- hidden until button click -->
+
+    <div class="row">
+        <div id="search-results" class="search-results hide">
+
+    <!-- container 1: display media art results -->
+
+        <div class="col s6">
+        <div id="media-art" class="col s6 center-align">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla earum reprehenderit sint nisi. Laboriosam dolore provident, minus ut fugit facere magnam officia eum magni consequatur possimus quis, delectus ullam a!</p>
+        </div>
+        </div>
+
+    <!-- container 2: display media data results -->
+    
+        <div id="media-data" class="col s6">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla earum reprehenderit sint nisi. Laboriosam dolore provident, minus ut fugit facere magnam officia eum magni consequatur possimus quis, delectus ullam a!</p>
+        </div>
+
+        </div>
+    </div>
+
+</main>
+
+<footer>
+    <div class="container center-align">
+
+        <p>Contributions by Clever Cats</p>
+
+    </div>
+</footer>
+
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./Assets/JS/materialize.min.js"></script>
+    <script src="./Assets/JS/script.js"></script>
 </body>
 </html>
