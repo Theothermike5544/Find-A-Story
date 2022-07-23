@@ -7,10 +7,19 @@ $(document).ready(function(){
     $('select').formSelect();
   });
 
+// disable the enter key from being utilized with the search function
+$(document).keypress(
+    function (event) {
+        if (event.which == '13') {
+            event.preventDefault();
+        }
+    });
+
 $('#submit-btn').on('click', function(event) {
+event.preventDefault();
     let searchMedia = mediaInputEl.value.trim();
 
-    // get weather unless input left blank
+    // get result unless input left blank
     if (searchMedia) {
       console.log('hello world!');
       //$('#search-media').val('');
