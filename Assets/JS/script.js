@@ -104,6 +104,7 @@ var displayTVResult = function(data) {
   const tvPoster = data.Poster;
   const tvPlot = data.Plot;
 
+  $('#media-title').html('');
   $('#media-art').html('');
   $('#media-data').html('');
 
@@ -308,5 +309,6 @@ var displayBOOKResult = function(data) {
 var display = function() {
   $('#search-results').removeClass('hide');
   $('#search-history').removeClass('hide');
+  $('#clear-history-btn').removeClass('hide');
 };
 
