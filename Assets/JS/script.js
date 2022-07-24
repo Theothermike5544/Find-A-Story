@@ -35,6 +35,9 @@ $('#submit-btn').on('click', function(event) {
     } else {
       alert('Please enter a valid title.');
     }
+
+  // display & hide items on page
+  display();
 });
 
 // function to get book data
@@ -90,4 +93,8 @@ var lookTVData = function(tv) {
   .catch(function(error) {
     alert('Unable to connect to TV api');
   })
+};
+
+var display = function() {
+  $('#search-results').removeClass('hide');
 };
