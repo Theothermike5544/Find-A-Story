@@ -68,7 +68,7 @@ var lookMovieData = function(movie) {
     if (response.ok){
       console.log(response)
       response.json().then(function(title){
-      console.log(title);
+      displayMOVResult(data);
     });
   }
   })
@@ -106,6 +106,9 @@ var displayTVResult = function(data) {
   const tvPoster = data.Poster;
   const tvPlot = data.Plot;
 
+  $('#media-art').html('');
+  $('#media-data').html('');
+
   // set actor
   const tvActorEl = document.createElement('p');
   $(tvActorEl).attr('class', 'tv-results');
@@ -142,7 +145,7 @@ var displayTVResult = function(data) {
   $(tvRatedEl).html('<strong>Rated:</strong> ' + tvRated);
   $('#media-data').append(tvRatedEl);
 
-  // set imdbrating
+  // set imdb rating
   const tvImdbEl = document.createElement('p');
   $(tvImdbEl).attr('class', 'tv-results');
   $(tvImdbEl).html('<strong>IMDB Rating:</strong> ' + tvimdbRating);
@@ -156,6 +159,73 @@ var displayTVResult = function(data) {
 
   // set poster
   $('#media-art').append('<img src="' + tvPoster + '" alt="' + tvTitle + '"/>');
+};
+
+var displayMOVResult = function(data) {
+  const movTitle = data.Title;
+  const movActor = data.Actors;
+  const movDirector = data.Director;
+  const movGenre = data.Genre;
+  const movRated = data.Rated;
+  const movRuntime = data.Runtime;
+  const movimdbRating = data.imdbRating;
+  const movReleaseDate = data.Released;
+  const movPoster = data.Poster;
+  const movPlot = data.Plot;
+
+  $('#media-art').html('');
+  $('#media-data').html('');
+
+  // set actor
+  const movActorEl = document.createElement('p');
+  $(movActorEl).attr('class', 'mov-results');
+  $(movActorEl).html('<strong>Actors:</strong> ' + movActor);
+  $('#media-data').append(movActorEl);
+
+  // set director
+  const movDirectorEl = document.createElement('p');
+  $(movDirectorEl).attr('class', 'mov-results');
+  $(movDirectorEl).html('<strong>Director:</strong> ' + movDirector);
+  $('#media-data').append(movDirectorEl);
+
+  // set genre
+  const movGenreEl = document.createElement('p');
+  $(movGenreEl).attr('class', 'mov-results');
+  $(movGenreEl).html('<strong>Genre:</strong> ' + movGenre);
+  $('#media-data').append(movGenreEl);
+
+  // set rated
+  const movRatedEl = document.createElement('p');
+  $(movRatedEl).attr('class', 'mov-results');
+  $(movRatedEl).html('<strong>Rated:</strong> ' + movRated);
+  $('#media-data').append(movRatedEl);
+
+  // set runtime
+  const movRuntimeEl = document.createElement('p');
+  $(movRuntimeEl).attr('class', 'mov-results');
+  $(movRuntimeEl).html('<strong>Runtime:</strong> ' + movRuntime);
+  $('#media-data').append(movRuntimeEl);
+
+  // set imdb rating
+  const movImdbEl = document.createElement('p');
+  $(movImdbEl).attr('class', 'mov-results');
+  $(movImdbEl).html('<strong>IMDB Rating:</strong> ' + movimdbRating);
+  $('#media-data').append(movImdbEl);
+
+  // set released
+  const movReleaseDateEl = document.createElement('p');
+  $(movReleaseDateEl).attr('class', 'mov-results');
+  $(movReleaseDateEl).html('<strong>Release Date:</strong> ' + movReleaseDate);
+  $('#media-data').append(movReleaseDateEl);
+
+  // set plot
+  const movPlotEl = document.createElement('p');
+  $(movPlotEl).attr('class', 'mov-results');
+  $(movPlotEl).html('<strong>Plot:</strong> ' + movPlot);
+  $('#media-data').append(movPlotEl);
+
+  // set poster
+  $('#media-art').append('<img src="' + movPoster + '" alt="' + movTitle + '"/>');
 };
 
 var display = function() {
