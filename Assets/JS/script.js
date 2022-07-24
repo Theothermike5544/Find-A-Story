@@ -47,10 +47,8 @@ var lookBookData = function(book) {
   fetch(bookApiUrl)
   .then(function(response) {
     if (response.ok) {
-      console.log(response)
       response.json().then(function(data) {
-      console.log(data.items[0].volumeInfo);
-      console.log(data.items[0].volumeInfo.title);
+      displayBOOKResult(data);
       });
     }
   })
@@ -66,8 +64,7 @@ var lookMovieData = function(movie) {
   fetch(movieApiUrl)
   .then(function(response){
     if (response.ok){
-      console.log(response)
-      response.json().then(function(title){
+      response.json().then(function(data){
       displayMOVResult(data);
     });
   }
@@ -228,6 +225,82 @@ var displayMOVResult = function(data) {
   $('#media-art').append('<img src="' + movPoster + '" alt="' + movTitle + '"/>');
 };
 
+var displayBOOKResult = function(data) {
+    const bookVolumeInfo = data.items[0].volumeInfo
+    const bookTitle = data.items[0].volumeInfo.title;
+    const bookAuthors = data.items[0].volumeInfo.authors;
+    const bookPublisher = data.items[0].volumeInfo.publisher;
+    const bookPublishedDate = data.items[0].volumeInfo.publishedDate;
+    const bookPageCount = data.items[0].volumeInfo.pageCount;
+    const bookAverageRating = data.items[0].volumeInfo.averageRating;
+    const bookCategories = data.items[0].volumeInfo.categories;
+    const bookLanguage = data.items[0].volumeInfo.language;
+    const bookImageLinks = data.items[0].volumeInfo.imageLinks.thumbnail;
+    const bookDescription = data.items[0].volumeInfo.description;
+    
+  
+    $('#media-art').html('');
+    $('#media-data').html('');
+  
+    // set actor
+    const bookTitleEl = document.createElement('p');
+    $(bookTitleEl).attr('class', 'book-results');
+    $(bookTitleEl).html('<strong>Title:</strong> ' + bookTitle);
+    $('#media-data').append(bookTitleEl);
+  
+    // set authors
+    const bookAuthorsEl = document.createElement('p');
+    $(bookAuthorsEl).attr('class', 'book-results');
+    $(bookAuthorsEl).html('<strong>Authors:</strong> ' + bookAuthors);
+    $('#media-data').append(bookAuthorsEl);
+  
+    // set publisher
+    const bookPublisherEl = document.createElement('p');
+    $(bookPublisherEl).attr('class', 'book-results');
+    $(bookPublisherEl).html('<strong>Publisher:</strong> ' + bookPublisher);
+    $('#media-data').append(bookPublisherEl);
+  
+    // set published date
+    const bookPublishedDateEl = document.createElement('p');
+    $(bookPublishedDateEl).attr('class', 'book-results');
+    $(bookPublishedDateEl).html('<strong>Published Date:</strong> ' + bookPublishedDate);
+    $('#media-data').append(bookPublishedDateEl);
+  
+    // set page count
+    const bookPageCountEl = document.createElement('p');
+    $(bookPageCountEl).attr('class', 'book-results');
+    $(bookPageCountEl).html('<strong>Page Count:</strong> ' + bookPageCount);
+    $('#media-data').append(bookPageCountEl);
+  
+    // set book average rating
+    const bookAverageRatingEl = document.createElement('p');
+    $(bookAverageRatingEl).attr('class', 'book-results');
+    $(bookAverageRatingEl).html('<strong>Book Rating:</strong> ' + bookAverageRating);
+    $('#media-data').append(bookAverageRatingEl);
+  
+    // set book catergory
+    const bookCategoriesEl = document.createElement('p');
+    $(bookCategoriesEl).attr('class', 'book-results');
+    $(bookCategoriesEl).html('<strong>Catergory:</strong> ' + bookCategories);
+    $('#media-data').append(bookCategoriesEl);
+  
+    // set book language
+    const bookLanguageEl = document.createElement('p');
+    $(bookLanguageEl).attr('class', 'book-results');
+    $(bookLanguageEl).html('<strong>Language:</strong> ' + bookLanguage);
+    $('#media-data').append(bookLanguageEl);
+    
+    // set book synopsis
+    const bookDescriptionEl = document.createElement('p');
+    $(bookDescriptionEl).attr('class', 'book-results');
+    $(bookDescriptionEl).html('<strong>Synopsis:</strong> ' + bookDescription);
+    $('#media-data').append(bookDescriptionEl);
+  
+    // set poster
+    $('#media-art').append('<img src="' + bookImageLinks + '" alt="' + bookTitle + '"/>');
+  };
+
 var display = function() {
   $('#search-results').removeClass('hide');
 };
+
