@@ -84,15 +84,78 @@ var lookTVData = function(tv) {
   fetch(tvApiUrl)
   .then(function(response) {
     if (response.ok) {
-      console.log(response)
       response.json().then(function(data) {
-      console.log(data);
+      displayTVResult(data);
       });
     }
   })
   .catch(function(error) {
     alert('Unable to connect to TV api');
   })
+};
+
+var displayTVResult = function(data) {
+  const tvTitle = data.Title;
+  const tvActor = data.Actors;
+  const tvGenre = data.Genre;
+  const tvWriter = data.Writer;
+  const tvRuntime = data.Runtime;
+  const tvReleaseDate = data.Released;
+  const tvRated = data.Rated;
+  const tvimdbRating = data.imdbRating;
+  const tvPoster = data.Poster;
+  const tvPlot = data.Plot;
+
+  // set actor
+  const tvActorEl = document.createElement('p');
+  $(tvActorEl).attr('class', 'tv-results');
+  $(tvActorEl).html('<strong>Actors:</strong> ' + tvActor);
+  $('#media-data').append(tvActorEl);
+
+  // set genre
+  const tvGenreEl = document.createElement('p');
+  $(tvGenreEl).attr('class', 'tv-results');
+  $(tvGenreEl).html('<strong>Genre:</strong> ' + tvGenre);
+  $('#media-data').append(tvGenreEl);
+
+  // set writer
+  const tvWriterEl = document.createElement('p');
+  $(tvWriterEl).attr('class', 'tv-results');
+  $(tvWriterEl).html('<strong>Writer:</strong> ' + tvWriter);
+  $('#media-data').append(tvWriterEl);
+
+  // set runtime
+  const tvRuntimeEl = document.createElement('p');
+  $(tvRuntimeEl).attr('class', 'tv-results');
+  $(tvRuntimeEl).html('<strong>Runtime:</strong> ' + tvRuntime);
+  $('#media-data').append(tvRuntimeEl);
+
+  // set released
+  const tvReleasedEl = document.createElement('p');
+  $(tvReleasedEl).attr('class', 'tv-results');
+  $(tvReleasedEl).html('<strong>Released:</strong> ' + tvReleaseDate);
+  $('#media-data').append(tvReleasedEl);
+
+  // set rated
+  const tvRatedEl = document.createElement('p');
+  $(tvRatedEl).attr('class', 'tv-results');
+  $(tvRatedEl).html('<strong>Rated:</strong> ' + tvRated);
+  $('#media-data').append(tvRatedEl);
+
+  // set imdbrating
+  const tvImdbEl = document.createElement('p');
+  $(tvImdbEl).attr('class', 'tv-results');
+  $(tvImdbEl).html('<strong>IMDB Rating:</strong> ' + tvimdbRating);
+  $('#media-data').append(tvImdbEl);
+
+  // set plot
+  const tvPlotEl = document.createElement('p');
+  $(tvPlotEl).attr('class', 'tv-results');
+  $(tvPlotEl).html('<strong>Plot:</strong> ' + tvPlot);
+  $('#media-data').append(tvPlotEl);
+
+  // set poster
+  $('#media-art').append('<img src="' + tvPoster + '" alt="' + tvTitle + '"/>');
 };
 
 var display = function() {
