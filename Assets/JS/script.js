@@ -31,11 +31,13 @@ $('#submit-btn').on('click', function(event) {
       $('#search-media').val('');
     } else if (optionEl.value === "3"){
       lookTVData(searchMedia);
-      saveTV(searchMedia);
       $('#search-media').val('');
     } else {
       alert('Please enter a valid title.');
     }
+
+  saveMOV(searchMedia);
+  saveTV(searchMedia);
 
   // display & hide items on page
   display();
@@ -313,6 +315,7 @@ var displayBOOKResult = function(data) {
     $('#media-art').append('<img src="' + bookImageLinks + '" alt="' + bookTitle + '"/>');
   };
 
+// save tvshows to localstorage & add to search history
 var saveTV = function(searchMedia) {
   tvArray = JSON.parse(localStorage.getItem('tvshows'));
 
@@ -347,7 +350,42 @@ var saveTV = function(searchMedia) {
   }
 };
 
-// make search history links clickable
+// save movies to localstorage & add to search history
+var saveMOV = function(searchMedia) {
+  movArray = JSON.parse(localStorage.getItem('movies'));
+
+  $('#search-history').html('');
+
+  // check for movies in previous searches
+  if (localStorage.getItem('movies') === null) {
+    movArray = [];
+  } else {
+    movArray = JSON.parse(localStorage.getItem('movies'));
+  }
+
+  // add movies into array
+  if (movArray.includes(searchMedia) === false) {
+    movArray.push(searchMedia);
+  }
+
+  localStorage.setItem('movies', JSON.stringify(movArray));
+
+  // create search history list items
+  if (movArray) {
+    for (var i = 0; i < movArray.length; i++) {
+      let movies = movArray[i];
+
+      const liEl = document.createElement('li');
+      liEl.textContent = movies;
+      $(liEl).attr('id', 'mov-list');
+      $(liEl).attr('class', 'mov-list');
+      $(liEl).attr('data-mov', movies);
+      $('#search-history').append(liEl);
+    }
+  }
+};
+
+// make tv search history links clickable
 $('#search-history').on('click', 'li#tv-list', function(event) {
   let getTV = $(this).attr('data-tv');
   // clears input
@@ -356,11 +394,18 @@ $('#search-history').on('click', 'li#tv-list', function(event) {
   lookTVData(getTV);
 });
 
+// make movie search history links clickable
+$('#search-history').on('click', 'li#mov-list', function(event) {
+  let getMOV = $(this).attr('data-mov');
+  // clears input
+  $('#search-media').val('');
+
+  lookMovieData(getMOV);
+});
+
 // display or hide items on page
 var display = function() {
   $('#search-results').removeClass('hide');
   $('#search-history').removeClass('hide');
   $('#clear-history-btn').removeClass('hide');
 };
-
-
