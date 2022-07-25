@@ -25,19 +25,19 @@ $('#submit-btn').on('click', function(event) {
     // get result based on media type, unless input left blank
     if (optionEl.value === "1") {
       lookBookData(searchMedia);
+      saveBook(searchMedia);
       $('#search-media').val('');
     } else if (optionEl.value === "2"){
       lookMovieData(searchMedia);
+      saveMOV(searchMedia);
       $('#search-media').val('');
     } else if (optionEl.value === "3"){
       lookTVData(searchMedia);
+      saveTV(searchMedia);
       $('#search-media').val('');
     } else {
       alert('Please enter a valid title.');
     }
-
-  saveMOV(searchMedia);
-  saveTV(searchMedia);
 
   // display & hide items on page
   display();
@@ -385,6 +385,40 @@ var saveMOV = function(searchMedia) {
   }
 };
 
+var saveBook = function(searchMedia) {
+  bookArray = JSON.parse(localStorage.getItem('books'));
+
+  $('#search-history').html('');
+
+  // check for tvshow in previous searches
+  if (localStorage.getItem('books') === null) {
+    bookArray = [];
+  } else {
+    bookArray = JSON.parse(localStorage.getItem('books'));
+  }
+
+  // add tvshow into array
+  if (bookArray.includes(searchMedia) === false) {
+    bookArray.push(searchMedia);
+  }
+
+  localStorage.setItem('books', JSON.stringify(bookArray));
+
+  // create search history list items
+  if (bookArray) {
+    for (var i = 0; i < bookArray.length; i++) {
+      let book = bookArray[i];
+
+      const liEl = document.createElement('li');
+      liEl.textContent = book;
+      $(liEl).attr('id', 'book-list');
+      $(liEl).attr('class', 'book-list');
+      $(liEl).attr('data-book', book);
+      $('#search-history').append(liEl);
+    }
+  }
+};
+
 // make tv search history links clickable
 $('#search-history').on('click', 'li#tv-list', function(event) {
   let getTV = $(this).attr('data-tv');
@@ -401,6 +435,15 @@ $('#search-history').on('click', 'li#mov-list', function(event) {
   $('#search-media').val('');
 
   lookMovieData(getMOV);
+});
+
+// make book search history links clickable
+$('#search-history').on('click', 'li#book-list', function(event) {
+  let getBook = $(this).attr('data-book');
+  // clears input
+  $('#search-media').val('');
+
+  lookBookData(getBook);
 });
 
 // display or hide items on page

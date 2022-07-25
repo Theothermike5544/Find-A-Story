@@ -21,7 +21,7 @@ ul li a:hover {
     color: #eee;
 }
 
-ul li#tv-list {
+ul li#tv-list, ul li#mov-list, ul li#book-list {
     margin: 0 5px;
     padding: 7px 15px;
     transition: all 0.5s ease 0s;
@@ -31,7 +31,7 @@ ul li#tv-list {
     font-size: 0.9em;
 }
 
-ul li#tv-list:hover {
+ul li#tv-list:hover, ul li#mov-list:hover, ul li#book-list:hover {
     background-color: #222;
     color: #eee;
 }
