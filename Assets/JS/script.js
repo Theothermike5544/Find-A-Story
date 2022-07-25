@@ -91,6 +91,7 @@ var lookTVData = function(tv) {
   })
 };
 
+// display tv show results
 var displayTVResult = function(data) {
   const tvTitle = data.Title;
   const tvActor = data.Actors;
@@ -103,8 +104,12 @@ var displayTVResult = function(data) {
   const tvPoster = data.Poster;
   const tvPlot = data.Plot;
 
+  $('#media-title').html('');
   $('#media-art').html('');
   $('#media-data').html('');
+
+  // set title
+  $('#media-title').append(tvTitle);
 
   // set actor
   const tvActorEl = document.createElement('p');
@@ -300,7 +305,10 @@ var displayBOOKResult = function(data) {
     $('#media-art').append('<img src="' + bookImageLinks + '" alt="' + bookTitle + '"/>');
   };
 
+// display or hide items on page
 var display = function() {
   $('#search-results').removeClass('hide');
+  $('#search-history').removeClass('hide');
+  $('#clear-history-btn').removeClass('hide');
 };
 
