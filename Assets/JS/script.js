@@ -91,6 +91,7 @@ var lookTVData = function(tv) {
   })
 };
 
+// display tv show results
 var displayTVResult = function(data) {
   const tvTitle = data.Title;
   const tvActor = data.Actors;
@@ -103,8 +104,12 @@ var displayTVResult = function(data) {
   const tvPoster = data.Poster;
   const tvPlot = data.Plot;
 
+  $('#media-title').html('');
   $('#media-art').html('');
   $('#media-data').html('');
+
+  // set title
+  $('#media-title').append(tvTitle);
 
   // set actor
   const tvActorEl = document.createElement('p');
@@ -145,7 +150,7 @@ var displayTVResult = function(data) {
   // set imdb rating
   const tvImdbEl = document.createElement('p');
   $(tvImdbEl).attr('class', 'tv-results');
-  $(tvImdbEl).html('<strong>IMDB Rating:</strong> ' + tvimdbRating);
+  $(tvImdbEl).html('<strong>IMDB Rating:</strong> ' + tvimdbRating + " out of 10.");
   $('#media-data').append(tvImdbEl);
 
   // set plot
@@ -170,8 +175,12 @@ var displayMOVResult = function(data) {
   const movPoster = data.Poster;
   const movPlot = data.Plot;
 
+  $('#media-title').html('');
   $('#media-art').html('');
   $('#media-data').html('');
+
+  // set title
+  $('#media-title').append(movTitle);
 
   // set actor
   const movActorEl = document.createElement('p');
@@ -206,7 +215,7 @@ var displayMOVResult = function(data) {
   // set imdb rating
   const movImdbEl = document.createElement('p');
   $(movImdbEl).attr('class', 'mov-results');
-  $(movImdbEl).html('<strong>IMDB Rating:</strong> ' + movimdbRating);
+  $(movImdbEl).html('<strong>IMDB Rating:</strong> ' + movimdbRating + " out of 10.");
   $('#media-data').append(movImdbEl);
 
   // set released
@@ -238,10 +247,13 @@ var displayBOOKResult = function(data) {
     const bookImageLinks = data.items[0].volumeInfo.imageLinks.thumbnail;
     const bookDescription = data.items[0].volumeInfo.description;
     
-  
+    $('#media-title').html('');
     $('#media-art').html('');
     $('#media-data').html('');
   
+    // set title
+    $('#media-title').append(bookTitle);
+
     // set actor
     const bookTitleEl = document.createElement('p');
     $(bookTitleEl).attr('class', 'book-results');
@@ -275,7 +287,7 @@ var displayBOOKResult = function(data) {
     // set book average rating
     const bookAverageRatingEl = document.createElement('p');
     $(bookAverageRatingEl).attr('class', 'book-results');
-    $(bookAverageRatingEl).html('<strong>Book Rating:</strong> ' + bookAverageRating);
+    $(bookAverageRatingEl).html('<strong>Book Rating:</strong> ' + bookAverageRating + " out of 5.");
     $('#media-data').append(bookAverageRatingEl);
   
     // set book catergory
@@ -300,7 +312,11 @@ var displayBOOKResult = function(data) {
     $('#media-art').append('<img src="' + bookImageLinks + '" alt="' + bookTitle + '"/>');
   };
 
+// display or hide items on page
 var display = function() {
   $('#search-results').removeClass('hide');
+  $('#search-history').removeClass('hide');
+  $('#clear-history-btn').removeClass('hide');
 };
+
 
