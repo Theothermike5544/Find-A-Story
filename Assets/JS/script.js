@@ -31,6 +31,7 @@ $('#submit-btn').on('click', function(event) {
       $('#search-media').val('');
     } else if (optionEl.value === "3"){
       lookTVData(searchMedia);
+      saveTV(searchMedia);
       $('#search-media').val('');
     } else {
       alert('Please enter a valid title.');
@@ -311,6 +312,49 @@ var displayBOOKResult = function(data) {
     // set poster
     $('#media-art').append('<img src="' + bookImageLinks + '" alt="' + bookTitle + '"/>');
   };
+
+var saveTV = function(searchMedia) {
+  tvArray = JSON.parse(localStorage.getItem('tvshows'));
+
+  $('#search-history').html('');
+
+  // check for tvshow in previous searches
+  if (localStorage.getItem('tvshows') === null) {
+    tvArray = [];
+  } else {
+    tvArray = JSON.parse(localStorage.getItem('tvshows'));
+  }
+
+  // add tvshow into array
+  if (tvArray.includes(searchMedia) === false) {
+    tvArray.push(searchMedia);
+  }
+
+  localStorage.setItem('tvshows', JSON.stringify(tvArray));
+
+  // create search history list items
+  if (tvArray) {
+    for (var i = 0; i < tvArray.length; i++) {
+      let tvShow = tvArray[i];
+
+      const liEl = document.createElement('li');
+      liEl.textContent = tvShow;
+      $(liEl).attr('id', 'tv-list');
+      $(liEl).attr('class', 'tv-list');
+      $(liEl).attr('data-tv', tvShow);
+      $('#search-history').append(liEl);
+    }
+  }
+};
+
+// make search history links clickable
+$('#search-history').on('click', 'li#tv-list', function(event) {
+  let getTV = $(this).attr('data-tv');
+  // clears input
+  $('#search-media').val('');
+
+  lookTVData(getTV);
+});
 
 // display or hide items on page
 var display = function() {
