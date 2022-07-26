@@ -446,6 +446,28 @@ $('#search-history').on('click', 'li#book-list', function(event) {
   lookBookData(getBook);
 });
 
+// Clear button functionality movies
+var clearStorage = document.getElementById("clear-history-btn");
+clearStorage.addEventListener("click", function() {
+window.localStorage.removeItem('movies');
+window.location.reload();
+});
+
+// Clear button functionality tv shows
+var clearStorage = document.getElementById("clear-history-btn");
+clearStorage.addEventListener("click", function() {
+window.localStorage.removeItem('tvshows');
+window.location.reload();
+});
+
+// Clear button functionality books
+var clearStorage = document.getElementById("clear-history-btn");
+clearStorage.addEventListener("click", function() {
+window.localStorage.removeItem('books');
+window.location.reload();
+});
+
+
 // display or hide items on page
 var display = function() {
   $('#search-results').removeClass('hide');
