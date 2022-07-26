@@ -34,3 +34,125 @@ ul li#tv-list:hover, ul li#mov-list:hover, ul li#book-list:hover {
     padding-right: 30px;
     height: 460px;
 }
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url("img/main-bg.png");
+}
+label.text{
+    color: var(--third);
+}
+
+:root{
+    --first: #612e0f;
+    --second: #A27B5C;
+    --third: #dcd7c9;
+    --forth: #9b432b;
+    --fifth: #8e7c54;
+}
+header {
+    background-color: var(--first);
+    color: var(--third);
+    height: 3.5rem;
+    width: 100%;
+    position: relative;
+    margin-bottom: 0;
+
+}
+button#submit-btn.btn, #btn-clear{
+    background-color: var(--third);
+    color: var(--forth);
+}
+button#submit-btn.btn:hover, #btn-clear:hover{
+    color: var(--second);
+}
+.container {
+    background-color:  var(--second);
+    padding: 15px 15px 0;
+    z-index: 2;
+}
+div#init.init{
+    position: absolute;
+    width: 100%;
+    background-color: var(--second);
+    margin: 0;
+    height: 35%;
+    padding: 0;
+}
+img{
+    display: inline-block;
+    position: relative;
+    right: 10px;
+    bottom: 2px;
+}
+
+label.active, .select-dropdown, label{
+    color: var(--third);
+}
+div.input-field, input, .question{
+    background-color: transparent;
+    color: var(--third);
+}
+
+header h1{
+    font-family: montserrat;
+    position: absolute;
+    left: 1.5rem;
+    top: 0.2rem;
+}
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    list-style: none;
+    background-color: var(--third);
+    border: none;
+    border-radius: 10px;
+    height: 5rem;
+    width: 100%;
+}
+ul li.search-history{
+    padding-top: 26px;
+    padding-left: 10px;
+}
+
+ul li a {
+    margin: 0;
+    padding: 7px 15px;
+    transition: all 0.5s ease 0s;
+    background-color: var(--fifth);
+    color: var(--third);
+    border-radius: 10px;
+    font-size: 0.9em;
+}
+
+ul li a:hover {
+    background-color: var(--first);
+    color: #eee;
+}
+footer {
+    background-color: var(--forth);
+    height: 4rem;
+    color: var(--third);
+    font-family: yeseva one;
+    font-size: 1.5rem;
+    position: relative;
+    top: 30rem;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+footer p{
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 15px;
+}
+span {
+    margin: 0%;
+    padding: 0%;
+}
