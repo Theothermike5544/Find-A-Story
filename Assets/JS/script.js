@@ -163,7 +163,7 @@ var displayTVResult = function(data) {
   $('#media-data').append(tvPlotEl);
 
   // set poster
-  $('#media-art').append('<img src="' + tvPoster + '" alt="' + tvTitle + '"/>');
+  $('#media-art').append('<img src="' + tvPoster + '" alt="' + tvTitle + '" class="tv-results" />');
 };
 
 var displayMOVResult = function(data) {
@@ -234,7 +234,7 @@ var displayMOVResult = function(data) {
   $('#media-data').append(movPlotEl);
 
   // set poster
-  $('#media-art').append('<img src="' + movPoster + '" alt="' + movTitle + '"/>');
+  $('#media-art').append('<img src="' + movPoster + '" alt="' + movTitle + '" class="mov-results" />');
 };
 
 var displayBOOKResult = function(data) {
@@ -312,7 +312,7 @@ var displayBOOKResult = function(data) {
     $('#media-data').append(bookDescriptionEl);
   
     // set poster
-    $('#media-art').append('<img src="' + bookImageLinks + '" alt="' + bookTitle + '"/>');
+    $('#media-art').append('<img src="' + bookImageLinks + '" alt="' + bookTitle + '" class="book-results" />');
   };
 
 // save tvshows to localstorage & add to search history
