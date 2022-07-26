@@ -1,9 +1,9 @@
 :root{
-    --first: #92542e;
-    --second: #dcb596;
-    --third: #e4e1db;
-    --forth: #b57837;
-    --fifth: #8e7c54;
+    --first: #284b63;
+    --second: #282f44;
+    --third: #93ffc7;
+    --forth: #cdcdcd;
+    --fifth: #76e5ac;
 }
 
 *{
@@ -13,12 +13,8 @@
 }
 
 body {
-    background-image: url("../img/main-bg.png");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-position: 80%;
-    color: #222;
+    color: var(--forth);
+    background-color: #191d32;
 }
 
 .container {
@@ -27,44 +23,77 @@ body {
 }
 
 header {
-    background-color: var(--first);
+    background-image: url("../img/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-position: 80%;
+    background-color: #191d32;
     color: var(--third);
+    height: 300px;
 }
 
-h1 {
+.row .col h1 {
     font-family: 'Montserrat', Helvetica;
+    font-size: 72px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--third);
+    margin: 235px auto -5px -5px !important;
+    text-shadow: 8px 5px var(--second) !important;
+}
+
+section .row .col p {
+    margin: 20px auto;
+}
+
+h3#media-title {
+    font-family: 'Montserrat', Helvetica;
+    font-size: 48px;
+    font-weight: bold;
+    color: var(--third);
+    text-shadow: 8px 5px #191d32 !important;
+}
+
+p {
+    line-height: 2rem;
+}
+
+strong {
+    font-weight: bold;
 }
 
 /* form customization */
 
-.input-field .prefix.active {
-    color: var(--first);
+.input-field label, .input-field .prefix ~ input {
+    color: var(--forth);
 }
 
-.input-field label {
-    color: var(--third);
-}
-
-input[type=text]:focus#search-media + label {
-    color: var(--first) !important;
+input[type=text]:focus#search-media + label, .input-field .prefix.active {
+    color: var(--fifth) !important;
 }
 
 .input-field input[type=text]:focus#search-media {
-    border-bottom: 1px solid var(--first) !important;
-    box-shadow: 0 1px 0 0 var(--first) !important;
+    border-bottom: 1px solid var(--fifth) !important;
+    box-shadow: 0 1px 0 0 var(--fifth) !important;
+    color: var(--forth);
 }
 
 form.input-field :focus#search-media {
     color: var(--third) !important;
 }
 
+.select-wrapper input.select-dropdown {
+    color: var(--forth);
+}
+
 .select-wrapper input.select-dropdown:focus {
-    border-bottom: 1px solid var(--first) !important;
-    box-shadow: 0 1px 0 0 var(--first) !important;
+    border-bottom: 1px solid var(--fifth) !important;
+    box-shadow: 0 1px 0 0 var(--fifth) !important;
 }
 
 .dropdown-content {
-    background-color: var(--third);
+    background-color: #eee;
 }
 
 .select-dropdown li.disabled, .select-dropdown li.disabled>span, .select-dropdown li.optgroup {
@@ -76,11 +105,15 @@ form.input-field :focus#search-media {
 }
 
 button#submit-btn.btn, #clear-btn, #clear-history-btn {
-    background-color: var(--third);
-    color: var(--forth);
+    background-color: transparent;
+    border: 1px solid var(--third);
+    border-radius: 5px;
+    transition: all 0.5s ease 0s;
+    color: var(--third);
 }
 
 button#submit-btn.btn:hover, #clear-btn:hover {
+    background-color: var(--third);
     color: var(--second);
 }
 
@@ -96,26 +129,32 @@ ul {
 
 ul li#tv-list, ul li#mov-list, ul li#book-list {
     margin: 0 5px;
-    padding: 7px 15px;
-    transition: all 0.5s ease 0s;
+    padding: 5px 15px;
     background-color: var(--fifth);
-    color: var(--third);
+    border: 1px solid var(--fifth);
     border-radius: 5px;
+    transition: all 0.5s ease 0s;
+    color: var(--second);
     font-size: 0.9em;
 }
 
 ul li#tv-list:hover, ul li#mov-list:hover, ul li#book-list:hover {
-    background-color: var(--first);
-    color: #eee;
+    background-color: transparent;
+    color: var(--fifth);
     cursor: pointer;
 }
 
 button#clear-history-btn {
-    background-color: var(--forth);
+    background-color: transparent;
+    border: 1px solid var(--third);
+    border-radius: 10px;
+    transition: all 0.5s ease 0s;
+    color: var(--third);
 }
 
 button#clear-history-btn:hover {
-    background-color: var(--first);
+    background-color: var(--third);
+    color: var(--second);
 }
 
 /* media image results */
@@ -143,9 +182,9 @@ img {
 /* footer customization */
 
 footer div.container {
-    background-color: var(--forth) !important;
+    background-color: #191d32 !important;
     color: var(--third);
-    font-family: 'Yeseva One', Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 1rem;
     padding: 20px 0;
     width: 100%;
