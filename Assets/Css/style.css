@@ -6,32 +6,31 @@ ul {
     list-style: none;
 }
 
-ul li a {
-    margin: 0 5px;
-    padding: 7px 15px;
-    transition: all 0.5s ease 0s;
-    background-color: #eee;
-    color: #222;
-    border-radius: 10px;
-    font-size: 0.9em;
-}
-
-ul li a:hover {
-    background-color: #222;
-    color: #eee;
-}
-
 ul li#tv-list, ul li#mov-list, ul li#book-list {
     margin: 0 5px;
     padding: 7px 15px;
     transition: all 0.5s ease 0s;
-    background-color: #eee;
-    color: #222;
-    border-radius: 10px;
+    color: #333;
+    background-color: #d5ecd4;
+    border-radius: 5px;
     font-size: 0.9em;
 }
 
 ul li#tv-list:hover, ul li#mov-list:hover, ul li#book-list:hover {
-    background-color: #222;
-    color: #eee;
+    background-color: #c3dac3;
+    color: #777;
+    cursor: pointer;
+}
+
+.media-art img.tv-results, .media-art img.mov-results {
+    display: block;
+    float: right;
+    padding-right: 30px;
+}
+
+.media-art img.book-results {
+    display: block;
+    float: right;
+    padding-right: 30px;
+    height: 460px;
 }
