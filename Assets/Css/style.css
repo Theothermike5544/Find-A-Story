@@ -1,3 +1,124 @@
+:root{
+    --first: #284b63;
+    --second: #282f44;
+    --third: #93ffc7;
+    --forth: #cdcdcd;
+    --fifth: #76e5ac;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--forth);
+    background-color: #191d32;
+}
+
+.container {
+    background-color: var(--second);
+    padding: 15px;
+}
+
+header {
+    background-image: url("../img/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-position: 80%;
+    background-color: #191d32;
+    color: var(--third);
+    height: 300px;
+}
+
+.row .col h1 {
+    font-family: 'Montserrat', Helvetica;
+    font-size: 72px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--third);
+    margin: 235px auto -5px -5px !important;
+    text-shadow: 8px 5px var(--second) !important;
+}
+
+section .row .col p {
+    margin: 20px auto;
+}
+
+h3#media-title {
+    font-family: 'Montserrat', Helvetica;
+    font-size: 48px;
+    font-weight: bold;
+    color: var(--third);
+    text-shadow: 8px 5px #191d32 !important;
+}
+
+p {
+    line-height: 2rem;
+}
+
+strong {
+    font-weight: bold;
+}
+
+/* form customization */
+
+.input-field label, .input-field .prefix ~ input {
+    color: var(--forth);
+}
+
+input[type=text]:focus#search-media + label, .input-field .prefix.active {
+    color: var(--fifth) !important;
+}
+
+.input-field input[type=text]:focus#search-media {
+    border-bottom: 1px solid var(--fifth) !important;
+    box-shadow: 0 1px 0 0 var(--fifth) !important;
+    color: var(--forth);
+}
+
+form.input-field :focus#search-media {
+    color: var(--third) !important;
+}
+
+.select-wrapper input.select-dropdown {
+    color: var(--forth);
+}
+
+.select-wrapper input.select-dropdown:focus {
+    border-bottom: 1px solid var(--fifth) !important;
+    box-shadow: 0 1px 0 0 var(--fifth) !important;
+}
+
+.dropdown-content {
+    background-color: #eee;
+}
+
+.select-dropdown li.disabled, .select-dropdown li.disabled>span, .select-dropdown li.optgroup {
+    color: rgba(0,0,0,0.3) !important;
+}
+
+.dropdown-content li>a, .dropdown-content li>span {
+    color: var(--first) !important;
+}
+
+button#submit-btn.btn, #clear-btn, #clear-history-btn {
+    background-color: transparent;
+    border: 1px solid var(--third);
+    border-radius: 5px;
+    transition: all 0.5s ease 0s;
+    color: var(--third);
+}
+
+button#submit-btn.btn:hover, #clear-btn:hover {
+    background-color: var(--third);
+    color: var(--second);
+}
+
+/* search history */
+
 ul {
     display: flex;
     flex-wrap: wrap;
@@ -8,19 +129,35 @@ ul {
 
 ul li#tv-list, ul li#mov-list, ul li#book-list {
     margin: 0 5px;
-    padding: 7px 15px;
-    transition: all 0.5s ease 0s;
-    color: #333;
-    background-color: #d5ecd4;
+    padding: 5px 15px;
+    background-color: var(--fifth);
+    border: 1px solid var(--fifth);
     border-radius: 5px;
+    transition: all 0.5s ease 0s;
+    color: var(--second);
     font-size: 0.9em;
 }
 
 ul li#tv-list:hover, ul li#mov-list:hover, ul li#book-list:hover {
-    background-color: #c3dac3;
-    color: #777;
+    background-color: transparent;
+    color: var(--fifth);
     cursor: pointer;
 }
+
+button#clear-history-btn {
+    background-color: transparent;
+    border: 1px solid var(--third);
+    border-radius: 10px;
+    transition: all 0.5s ease 0s;
+    color: var(--third);
+}
+
+button#clear-history-btn:hover {
+    background-color: var(--third);
+    color: var(--second);
+}
+
+/* media image results */
 
 .media-art img.tv-results, .media-art img.mov-results {
     display: block;
@@ -35,124 +172,20 @@ ul li#tv-list:hover, ul li#mov-list:hover, ul li#book-list:hover {
     height: 460px;
 }
 
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
-    background-image: url("img/main-bg.png");
-}
-label.text{
-    color: var(--third);
-}
-
-:root{
-    --first: #612e0f;
-    --second: #A27B5C;
-    --third: #dcd7c9;
-    --forth: #9b432b;
-    --fifth: #8e7c54;
-}
-header {
-    background-color: var(--first);
-    color: var(--third);
-    height: 3.5rem;
-    width: 100%;
-    position: relative;
-    margin-bottom: 0;
-
-}
-button#submit-btn.btn, #btn-clear{
-    background-color: var(--third);
-    color: var(--forth);
-}
-button#submit-btn.btn:hover, #btn-clear:hover{
-    color: var(--second);
-}
-.container {
-    background-color:  var(--second);
-    padding: 15px 15px 0;
-    z-index: 2;
-}
-div#init.init{
-    position: absolute;
-    width: 100%;
-    background-color: var(--second);
-    margin: 0;
-    height: 35%;
-    padding: 0;
-}
-img{
+img {
     display: inline-block;
     position: relative;
     right: 10px;
     bottom: 2px;
 }
 
-label.active, .select-dropdown, label{
-    color: var(--third);
-}
-div.input-field, input, .question{
-    background-color: transparent;
-    color: var(--third);
-}
+/* footer customization */
 
-header h1{
-    font-family: montserrat;
-    position: absolute;
-    left: 1.5rem;
-    top: 0.2rem;
-}
-ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    list-style: none;
-    background-color: var(--third);
-    border: none;
-    border-radius: 10px;
-    height: 5rem;
+footer div.container {
+    background-color: #191d32 !important;
+    color: var(--third);
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    padding: 20px 0;
     width: 100%;
-}
-ul li.search-history{
-    padding-top: 26px;
-    padding-left: 10px;
-}
-
-ul li a {
-    margin: 0;
-    padding: 7px 15px;
-    transition: all 0.5s ease 0s;
-    background-color: var(--fifth);
-    color: var(--third);
-    border-radius: 10px;
-    font-size: 0.9em;
-}
-
-ul li a:hover {
-    background-color: var(--first);
-    color: #eee;
-}
-footer {
-    background-color: var(--forth);
-    height: 4rem;
-    color: var(--third);
-    font-family: yeseva one;
-    font-size: 1.5rem;
-    position: relative;
-    top: 30rem;
-    padding-bottom: 0;
-    margin-bottom: 0;
-}
-footer p{
-    margin-bottom: 0;
-    padding-bottom: 0;
-    padding-top: 15px;
-}
-span {
-    margin: 0%;
-    padding: 0%;
 }
