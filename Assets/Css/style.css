@@ -19,7 +19,8 @@ body {
 
 .container {
     background-color: var(--second);
-    padding: 15px;
+    padding: 18px;
+    border: 4px #76e5ac solid;
 }
 
 header {
@@ -45,6 +46,7 @@ header {
 
 section .row .col p {
     margin: 20px auto;
+    font-size: 25px;
 }
 
 h3#media-title {
@@ -189,3 +191,14 @@ footer div.container {
     padding: 20px 0;
     width: 100%;
 }
+
+/* Mobile Responsive Data */
+
+@media screen and (max-width: 835px) {
+    /* fixes img resolution, font size, search and media input need to stack, buttons below */
+ }
+ 
+ @media screen and (max-width: 550px) {
+    /* fixes img resolution, font size off title and section.p , search and media input need to stack, buttons below */
+ }
+ /* responsive screen end */
