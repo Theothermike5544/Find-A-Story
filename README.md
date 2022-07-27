@@ -32,13 +32,13 @@ Have a clean repository that meets quality coding standards (file structure, nam
 Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).  <br />
 
 ## Screenshot of Live Application Deployed
-<!-- TBD --> 
+![This is our working application deployed](Screenshot-Working.png)
 
 ## Screenshot of Working URL
-<!-- TBD --> 
+![This is the working URL of our application](Screenshot-URL.png)
 
 ## Live URL
-<!-- TBD -->
+https://theothermike5544.github.io/Find-A-Story/
 
 ## Contributions for the group Clever Cats ![](Assets/img/clever-cats.png):
 ### Michael Bishop, Demi Hayashi, Isaiah Alvarez, Jiovani Rivera, Nashalys Fernandez
