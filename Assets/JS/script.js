@@ -2,20 +2,11 @@ const bookAPIKey = "AIzaSyAWyw1BzmR-6qJOC2A1-G0l_CqKVCN8N4s"
 const movieAPIKey = "ec8e125d"
 const mediaInputEl = document.getElementById('search-media');
 const dropDownEl = document.getElementById('media-selector');
+const invalidTitle = document.getElementById('invalid-title');
 
 // set up dropdown function for search input
 $(document).ready(function(){
   $('select').formSelect();
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.modal');
-  var options = {dismissible: true,
-    onCloseStart: closeModal};
-  var instances = M.Modal.init(elems, options);
-  var closeModal = function() {
-    instances.close();
-  }
 });
 
 // disable the enter key from being utilized with the search function
@@ -46,13 +37,23 @@ $('#submit-btn').on('click', function(event) {
       saveTV(searchMedia);
       $('#search-media').val('');
     } else {
-      $('.modal').modal();
+      invalidAlert();
+      // 'correct' or 'wrong' disappears after 2 time
+      setTimeout(function() {
+        invalidTitle.classList.add('hide');
+    }, 5000);
       return;
     }
 
   // display & hide items on page
   display();
 });
+
+// display 'invalid' on error
+var invalidAlert = function() {
+  invalidTitle.classList.remove('hide');
+  invalidTitle.textContent = 'Please enter a valid title';
+};
 
 // function to get book data
 var lookBookData = function(book) {
