@@ -2,7 +2,7 @@
     --first: #284b63;
     --second: #282f44;
     --third: #93ffc7;
-    --forth: #cdcdcd;
+    --fourth: #cdcdcd;
     --fifth: #76e5ac;
 }
 
@@ -13,7 +13,7 @@
 }
 
 body {
-    color: var(--forth);
+    color: var(--fourth);
     background-color: #191d32;
 }
 
@@ -24,7 +24,7 @@ body {
 }
 
 header {
-    background-image: url("../img/hero-1.jpg");
+    background-image: url("../img/hero.jpg");
     background-size: cover;
     background-position: center;
     background-color: #191d32;
@@ -66,7 +66,7 @@ strong {
 /* form customization */
 
 .input-field label, .input-field .prefix ~ input {
-    color: var(--forth);
+    color: var(--fourth);
 }
 
 input[type=text]:focus#search-media + label, .input-field .prefix.active {
@@ -76,7 +76,7 @@ input[type=text]:focus#search-media + label, .input-field .prefix.active {
 .input-field input[type=text]:focus#search-media {
     border-bottom: 1px solid var(--fifth) !important;
     box-shadow: 0 1px 0 0 var(--fifth) !important;
-    color: var(--forth);
+    color: var(--fourth);
 }
 
 form.input-field :focus#search-media {
@@ -84,7 +84,7 @@ form.input-field :focus#search-media {
 }
 
 .select-wrapper input.select-dropdown {
-    color: var(--forth);
+    color: var(--fourth);
 }
 
 .select-wrapper input.select-dropdown:focus {
@@ -117,9 +117,56 @@ button#submit-btn.btn:hover, #clear-btn:hover {
     color: var(--second);
 }
 
-#invalid-title {
-    padding-left: 65px;
-    color: #fff;
+/* modal styling */
+.modal-alert {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+  
+.modal-alert-content {
+    background-color: rgb(226, 249, 245);
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 40%;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    color: var(--first);
+}
+
+.modal-alert h5 {
+    color: var(--second);
+    font-weight: bold;
+    margin: 0 auto 15px auto;
+}
+
+.modal-alert p {
+    margin-bottom: 15px;
+}
+
+.close {
+    display: flex;
+    justify-content: flex-end;
+    color: var(--second);
+    font-weight: bold;
+    text-transform: uppercase;
+    border-top: 1px solid var(--fourth);
+    margin-top: 15px;
+    line-height: 3rem;
+    transition: all 0.5s ease 0s;
+}
+  
+.close:hover, .close:focus {
+    color: var(--first);
+    text-decoration: none;
+    cursor: pointer;
 }
 
 /* search history */
@@ -186,7 +233,7 @@ button#clear-history-btn:hover {
 
 footer div.container {
     background-color: #191d32 !important;
-    color: var(--forth);
+    color: var(--fourth);
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 1rem;
     padding: 20px 0;
