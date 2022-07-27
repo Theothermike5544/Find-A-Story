@@ -117,6 +117,11 @@ button#submit-btn.btn:hover, #clear-btn:hover {
     color: var(--second);
 }
 
+#invalid-title {
+    padding-left: 65px;
+    color: #fff;
+}
+
 /* search history */
 
 ul {
@@ -125,6 +130,10 @@ ul {
     justify-content: space-between;
     align-items: left;
     list-style: none;
+}
+
+ul#search-history {
+    padding-left: 65px !important;
 }
 
 ul li#tv-list, ul li#mov-list, ul li#book-list {
