@@ -177,9 +177,12 @@ button#clear-history-btn:hover {
 img {
     display: inline-block;
     position: relative;
-    right: 10px;
-    bottom: 2px;
+    right: 0.3em;
+    top: 0.8em;
 }
+div.col.s12.valign-wrapper p{
+    font-size: 1.2rem;
+    }
 
 /* footer customization */
 
