@@ -137,13 +137,14 @@ ul#search-history {
 }
 
 ul li#tv-list, ul li#mov-list, ul li#book-list {
-    margin: 0 5px;
+    margin: 5px;
     padding: 5px 15px;
     background-color: var(--fifth);
     border: 1px solid var(--fifth);
     border-radius: 5px;
     transition: all 0.5s ease 0s;
     color: var(--second);
+    text-transform: capitalize;
     font-size: 0.9em;
 }
 
@@ -185,7 +186,7 @@ button#clear-history-btn:hover {
 
 footer div.container {
     background-color: #191d32 !important;
-    color: var(--third);
+    color: var(--forth);
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 1rem;
     padding: 20px 0;
@@ -195,6 +196,16 @@ footer div.container {
 footer div.container p img {
     display: inline-block;
     position: absolute;
+}
+
+footer div.container a {
+    transition: all 0.5s ease 0s;
+    color: var(--third);
+}
+
+footer div.container a:hover {
+    color: #eee;
+    border-bottom: 1px solid var(--fifth);
 }
 
 /* Mobile Responsive Data */

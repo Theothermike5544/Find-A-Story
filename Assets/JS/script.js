@@ -38,7 +38,7 @@ $('#submit-btn').on('click', function(event) {
       $('#search-media').val('');
     } else {
       invalidAlert();
-      // 'correct' or 'wrong' disappears after 2 time
+      // invalid message disappears after 5 seconds
       setTimeout(function() {
         invalidTitle.classList.add('hide');
     }, 5000);
@@ -68,7 +68,7 @@ var lookBookData = function(book) {
     }
   })
   .catch(function(error) {
-    alert('Unable to connect to book api');
+    console.log('Unable to connect to book api');
 });
 }
 
@@ -85,7 +85,7 @@ var lookMovieData = function(movie) {
   }
   })
   .catch(function(error){
-    alert('Unable to connect to book api')
+    console.log('Unable to connect to book api')
   });
 }
 
@@ -102,7 +102,7 @@ var lookTVData = function(tv) {
     }
   })
   .catch(function(error) {
-    alert('Unable to connect to TV api');
+    console.log('Unable to connect to TV api');
   })
 };
 
@@ -178,6 +178,7 @@ var displayTVResult = function(data) {
   $('#media-art').append('<img src="' + tvPoster + '" alt="' + tvTitle + '" class="tv-results" />');
 };
 
+// display movie results
 var displayMOVResult = function(data) {
   const movTitle = data.Title;
   const movActor = data.Actors;
@@ -249,6 +250,7 @@ var displayMOVResult = function(data) {
   $('#media-art').append('<img src="' + movPoster + '" alt="' + movTitle + '" class="mov-results" />');
 };
 
+// display book results
 var displayBOOKResult = function(data) {
     const bookVolumeInfo = data.items[0].volumeInfo
     const bookTitle = data.items[0].volumeInfo.title;
@@ -397,6 +399,7 @@ var saveMOV = function(searchMedia) {
   }
 };
 
+// save book input to localstorage
 var saveBook = function(searchMedia) {
   bookArray = JSON.parse(localStorage.getItem('books'));
 
@@ -478,7 +481,6 @@ clearStorage.addEventListener("click", function() {
 window.localStorage.removeItem('books');
 window.location.reload();
 });
-
 
 // display or hide items on page
 var display = function() {
