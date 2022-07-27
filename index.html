@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Yeseva+One&display=swap" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="./Assets/Css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" href="./Assets/Css/style.css" />
     <title>Find A Story</title>
@@ -15,15 +18,13 @@
 
 <header>
     <div class="row">
-        <div class="col s12 center-align">
+        <div class="col s12">
             <h1>Find a Story</h1>
         </div>
     </div>
 </header>
 
-<!-- initial load: search for media section -->
-
-<div id="init" class="init">
+<!-- search for media section -->
 
 <section>
     <div class="row">
@@ -31,7 +32,7 @@
 
     <!-- introductory content -->
 
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor, dolorem rerum non quo praesentium nihil explicabo necessitatibus earum saepe a tempora nam commodi quas! Nesciunt alias porro enim minima quidem?</p>
+        <p>Welcome to “Find A Story!” Your one stop shop for searching resources on your favorite TV Shows, Movies, and Books. To get started, search for the title of your favorite story and select the appropriate media type!</p>
     
     </div>
     </div>
@@ -40,11 +41,11 @@
         
     <!-- input: search for books/movies -->
 
-        <form class="input-field col s12">
+        <form class="col s12">
             <div class="input-field col s6">
                 <i class="material-icons prefix">search</i>
                 <input placeholder="Search for Books, Movies, TV Series" id="search-media" type="text">
-                <label>Enter Story Title</label>
+                <label for="search-media">Enter Story Title</label>
             </div>
             <div class="input-field col s3">
     
@@ -62,7 +63,7 @@
     <!-- submit & clear buttons -->
 
             <div class="input-field col">
-                <button id="submit-btn" class="btn waves-effect waves-light" type="submit" name="action">
+                <button data-target="modal1" id="submit-btn" class="btn waves-effect waves-light modal-trigger" type="submit" name="action">
                     Search
                 </button>
             </div>
@@ -80,15 +81,23 @@
 
 <section>
     <div class="row">
+        <div class="col s12">
+        <div id="invalid-title" class="invalid-title hide"></div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="row">
     <div class="col s12 valign-wrapper">
 
     <!-- search history -->
 
-        <ul id="search-history" class="search-history">
-            <li><a href="">test</a></li>
-            <li><a href="">test</a></li>
-            <li><a href="">test</a></li>
-        </ul>
+        <ul id="search-history" class="search-history hide"></ul>
+
+        <button id="clear-history-btn" class="btn-floating btn-small waves-effect waves-light hide" type="submit" name="action">
+            <i class="material-icons">clear</i>
+        </button>
 
     </div>
     </div>
@@ -101,16 +110,18 @@
     <div class="row">
         <div id="search-results" class="search-results hide">
 
+            <h3 id="media-title" class="media-title center-align"></h3>
+
     <!-- container 1: display media art results -->
 
         <div class="col s6">
-        <div id="media-art" class="col s6 center-align"></div>
+            <div id="media-art" class="media-art"></div>
         </div>
 
     <!-- container 2: display media data results -->
     
-        <div id="media-data" class="col s6"></div>
-
+        <div class="col s6">
+            <div id="media-data" class="media-data"></div>
         </div>
     </div>
 
@@ -119,7 +130,7 @@
 <footer>
     <div class="container center-align">
 
-        <p>Contributions by Clever Cats</p>
+        <p>Contributions by <a href="#" target="_blank">Clever Cats</a> <img src ="./Assets/img/clever-cats.png"></p>
 
     </div>
 </footer>
