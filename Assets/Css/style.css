@@ -27,8 +27,6 @@ header {
     background-image: url("../img/hero.jpg");
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
-    background-position: 80%;
     background-color: #191d32;
     color: var(--third);
     height: 300px;
@@ -174,13 +172,6 @@ button#clear-history-btn:hover {
     height: 460px;
 }
 
-img {
-    display: inline-block;
-    position: relative;
-    right: 10px;
-    bottom: 2px;
-}
-
 /* footer customization */
 
 footer div.container {
@@ -190,6 +181,11 @@ footer div.container {
     font-size: 1rem;
     padding: 20px 0;
     width: 100%;
+}
+
+footer div.container p img {
+    display: inline-block;
+    position: absolute;
 }
 
 /* Mobile Responsive Data */

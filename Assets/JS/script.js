@@ -8,6 +8,16 @@ $(document).ready(function(){
   $('select').formSelect();
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.modal');
+  var options = {dismissible: true,
+    onCloseStart: closeModal};
+  var instances = M.Modal.init(elems, options);
+  var closeModal = function() {
+    instances.close();
+  }
+});
+
 // disable the enter key from being utilized with the search function
 $(document).keypress(
   function (event) {
@@ -23,20 +33,21 @@ $('#submit-btn').on('click', function(event) {
   const optionEl = document.getElementById('media-selector');
 
     // get result based on media type, unless input left blank
-    if (optionEl.value === "1") {
+    if (optionEl.value === "1" && searchMedia) {
       lookBookData(searchMedia);
       saveBook(searchMedia);
       $('#search-media').val('');
-    } else if (optionEl.value === "2"){
+    } else if (optionEl.value === "2" && searchMedia){
       lookMovieData(searchMedia);
       saveMOV(searchMedia);
       $('#search-media').val('');
-    } else if (optionEl.value === "3"){
+    } else if (optionEl.value === "3" && searchMedia){
       lookTVData(searchMedia);
       saveTV(searchMedia);
       $('#search-media').val('');
     } else {
-      alert('Please enter a valid title.');
+      $('.modal').modal();
+      return;
     }
 
   // display & hide items on page
