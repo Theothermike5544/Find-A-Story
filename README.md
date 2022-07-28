@@ -3,6 +3,9 @@
 ## About The Application
 Our group developed a web application utilizing two different server-side api’s (OMDB and Google Books) that allows us to search for a story, whether that is a movie, tv show or a book. Stories typically exist in these different media types and this application will allow us to not only retrieve information surrounding our favorite books / tv shows / movies, but also allows us the ability to find out if they were also made in the opposite media types. The application functions in such a way that it allows the user to first input the title of the media content they want to run a search on. Then they will be able to select the media type (TV, Book, Movie) and the returned response will provide visual information as well as data and descriptions to the most relevant information on the search. In terms of expansion and future development, this idea affords us the ability to expand on the application by accepting all forms of media types, "music, pod casts, audio books, etc." At this point we will switch the application name from "Find-A-Story", to "Find-It-Media" where it will be an all-encompassing media search tool similar to a query or aggregator of information.
 
+## Technologies Used
+### HTML / CSS with Materialize / JavaScript / jQuery / Server-Side API's utilizing OMDB and Google Books for Developers
+
 ## User Story
 As a someone who wants to learn more details about their favorite stories, books, tv shows, movies  <br />
 I want an application that returns several results based upon my media input selection and title search  <br />
