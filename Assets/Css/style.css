@@ -214,7 +214,7 @@ button#clear-history-btn:hover {
     color: var(--second);
 }
 
-/* media image results */
+/* media image results  */
 
 .media-art img.tv-results, .media-art img.mov-results {
     display: block;
@@ -258,10 +258,58 @@ footer div.container a:hover {
 /* Mobile Responsive Data */
 
 @media screen and (max-width: 835px) {
-    /* fixes img resolution, font size, search and media input need to stack, buttons below */
+    .media-art img.tv-results, .media-art img.mov-results {
+        display: block;
+        padding: 20px;
+    }
+    
+    .media-art img.book-results {
+        display: block;
+        padding: 20px;
+        height: 460px;
+    }
  }
- 
+
+ @media screen and (max-width: 768px) {
+    .row .col h1 {
+        font-size: 55px;
+        overflow: hidden;
+        margin: 250px auto -5px -5px !important;
+    }
+
+    section .row .col p {
+        font-size: 20px;
+    }
+
+    .media-art img.tv-results, .media-art img.mov-results {
+        display: block;
+        width: 85%;
+    }
+    
+    .media-art img.book-results {
+        display: block;
+        height: 100%;
+    }
+ }
+
  @media screen and (max-width: 550px) {
-    /* fixes img resolution, font size off title and section.p , search and media input need to stack, buttons below */
+    .row .col h1 {
+        font-size: 46px;
+        overflow: hidden;
+        margin: 258px auto -5px -5px !important;
+    }
+
+    section .row .col p {
+        font-size: 16px;
+    }
+
+    .media-art img.tv-results, .media-art img.mov-results {
+        display: block;
+        width: 100%;
+    }
+    
+    .media-art img.book-results {
+        display: block;
+        height: 70%;
+    }
  }
- /* responsive screen end */
