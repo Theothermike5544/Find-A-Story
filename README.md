@@ -43,5 +43,12 @@ Have a quality README (with unique name, description, technologies used, screens
 ## Live URL
 https://theothermike5544.github.io/Find-A-Story/
 
+## API DOCUMENTATION
+Google Books for Developers API  <br />
+https://developers.google.com/books  <br />
+
+OMDB API  <br />
+https://www.omdbapi.com/
+
 ## Contributions for the group Clever Cats ![](Assets/img/clever-cats.png):
 ### Michael Bishop, Demi Hayashi, Isaiah Alvarez, Jiovani Rivera, Nashalys Fernandez
